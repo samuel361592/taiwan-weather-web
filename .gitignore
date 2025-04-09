@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# 虛擬環境
+venv/
+
+# 天氣紀錄
+weather_log.txt
+
+# VSCode 設定檔（可選）
+.vscode/
+
+# 其他作業系統快取
+.DS_Store
+Thumbs.db

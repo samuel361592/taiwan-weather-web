@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>天氣查詢系統</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #f0f8ff;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    select, button {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .card {
+      background: #fafafa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border-left: 5px solid #4098d7;
+    }
+    .card p {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌦️ 天氣查詢系統</h1>
+    <form method="POST">
+      <label for="city">請選擇城市：</label>
+      <select name="city" id="city">
+        {% for c in [
+          "宜蘭縣", "花蓮縣", "臺東縣", "澎湖縣", "金門縣", "連江縣",
+          "臺北市", "新北市", "桃園市", "臺中市", "臺南市", "高雄市",
+          "基隆市", "新竹縣", "新竹市", "苗栗縣", "彰化縣", "南投縣",
+          "雲林縣", "嘉義縣", "嘉義市", "屏東縣"
+        ] %}
+          <option value="{{ c }}" {% if c == city %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">查詢天氣</button>
+    </form>
+
+    {% if forecast %}
+      <h2>📍 {{ city }} 未來 36 小時天氣預報</h2>
+      {% for item in forecast %}
+        <div class="card">
+          <p><strong>🕒 時間：</strong>{{ item.start }} ~ {{ item.end }}</p>
+          <p><strong>🌤️ 天氣：</strong>{{ item.weather }}</p>
+          <p><strong>🌡️ 氣溫：</strong>{{ item.min }}°C ~ {{ item.max }}°C</p>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</body>
+</html>
