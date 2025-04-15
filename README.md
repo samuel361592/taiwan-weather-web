@@ -1,7 +1,7 @@
 # Taiwan Weather Web
 
 一個使用中央氣象局（CWA）開放資料的天氣查詢工具，提供全台 22 縣市未來 36 小時天氣預報
-透過 Python + Flask 架設網頁介面，並支援定時排程查詢與 log 記錄
+透過 Python + Flask 架設網頁介面
 
 ---
 
@@ -42,19 +42,10 @@ weather-checker-selenium/
 ├── .gitignore
 └── README.md
 
-未來可加入功能
- LINE Notify 推播天氣
-
- 支援未來 7 日預報（切換不同 API）
-
- 圖表視覺化（氣溫折線圖）
-
- 加入氣象圖示或背景動態美化
-
- 支援輸出成 CSV / Excel
-
-授權 License
+## 授權 License
 本專案使用 MIT 授權
 氣象資料來源：中央氣象局開放資料平台
 
-Made with by samuel
+## 作者
+
+本專案由samuel開發，用於練習串接第三方 API 與 Flask 架構開發。
