@@ -8,9 +8,9 @@
 ## 快速開始
 ```bash
 
-1.安裝依賴套件
+### 安裝依賴套件
 pip install -r requirements.txt
-2.啟動 Flask 網頁伺服器
+### 啟動 Flask 網頁伺服器
 python app.py
 打開瀏覽器前往：http://localhost:5000
 即可查詢任一縣市天氣！
